@@ -1,0 +1,156 @@
+=======================================  SQL QUESTIONS =========================================
+
+1 : what is DBMS and RDBMS?
+2 : what is SQL?
+3 : SQL VS NO-SQL?
+4 : define a Database?
+5 : define a SQL Tables?
+6 : what is Fields in sql?
+7 : what is Records in sql?
+8 : what are the different database management system other than RDBMS?
+9 : what is the Data Types in SQL?
+10 : list the different type of relationship in sql?
+
+11 : define a Constraints in SQl?
+12 : Commonly used constraints in SQL?
+13 : what are various level constraints?
+14 : what is mean by primary key in sql?
+15 : what is mean by Foreign key in sql?
+16 : Different types of SQL Commands or SQl Application?
+17 : what is mean by DDL? 5
+18 : what is mean by DML? 4
+19 : what is mean by DQL? 2
+20 : what is mean by TCL? 2
+
+21 : how to CREATE and USE and DROP a database?
+
+DDL :-->
+22 : how to Create Table?
+23 : how to DROP a table?
+24 : how to Truncate Table?
+25 : how to alter a table? [ ADD COLUMN COLUMN_NAME, DROP COLUMN COLUMN_NAME , ALTER COLUMN COLUMN_NAME , RENAME TO TABLE_NAME]
+	A : how to add a new column
+	B : how to drop a existing column
+	C : how to change a column_name
+	D : how to rename a table_name
+
+DML :
+26 : how to Retrieve data from table?
+27 : how to Insert data into table?
+28 : how to Update data into table? [ where condition is must]
+29 : how to Delete Values in Table? [ where condition is must]
+
+30 : what is used of CREATE STATEMENT?
+31 : What is used of DROP STATEMENT?
+32 : What is used of TRUNCATE STATEMENT?
+33 : What is used of ALTER STATEMENT?
+
+34 : What is used of SELECT STATEMENT?
+35 : what is used of INSERT STATEMENT?
+36 : what is used of DELETE STATEMENT?
+37 : What is used of UPDATE STATEMENT?
+38 : what is used of DISTINCT KEYWORD?
+
+39 : how can you select unique record from a table? or how to remove duplicate values from a table? : SELECT DISTINCT COLUMN_NAME FROM TABLE_NAME;
+40 : how to retrieve records in ASC AND DESC order: SELECT * FROM TABLE_NAME ORDER BY COLUMN_NAME ASC;
+41 : ***Difference between DELETE , DROP AND TRUNCATE
+
+42 : what are some common clauses used with select queries in SQL?
+43 : explain a WHERE clause?
+44 : explain about ORDER BY clause?
+45 : explain about LIMIT clause?
+46 : explain about GROUP BY clause?
+47 : explain about HAVING Clause?
+
+48 : what are difference between 'HAVING' and 'WHERE' Clause?
+49 : different between ORDER BY and GROUP BY clause?
+50 : what is mean AGGREGATE FUNCTION?
+51 : what are different between aggregate and scalar function
+52 :  what is ORDER OF SQl EXECUTION?
+
+
+============================================================================== syntax===============================================
+
+11 : How to create a Database?                  : 	CREATE DATABASE DATABASE_NAME;
+12 : how to used a database?                    :   USE DATABASE_NAME;
+13 : how to delete or drop a database?          : 	DROP DATABASE DATABASE_NAME;
+14 : how to create a table?                     :   CREATE TABLES TABLE_NAME ( column_name data_type constraint , column_name data_type constraint );
+15 : how to insert a data into a table?         :   INSERT INTO TABLE_NAME ( column_name , column_name data_) VALUES (1 , "TANVEER");
+16 : how to retrieve a data from a table?       :   SELECT * FROM TABLE_NAME;
+17 : how to update existing row in the table?   :   UPDATE TABLE_NAME SET column_name = value1 , column_name = value2 WHERE CONDITION;
+18 : how to delete existing row from the table? :   DELETE FROM TABLE_NAME WHERE CONDITION;
+
+19 : how to add a new column into exiting table?:   ALTER TABLE TABLE_NAME ADD COLUMN COLUM_NAME;
+20 : how to drop a existing column from table?  :   ALTER TABLE TABLE_NAME DROP COLUMN COLUM_NAME;
+21 : how to alter a existing column from  table?:   ALTER TABLE TABLE_NAME ALTER COLUMN COLUM_NAME;
+22 : how to drop existing table from DB?        :   DROP TABLE TABLE_NAME;
+23 : how to delete all the data from a table?   :   TRUNCATE TABLE TABLE_NAME;
+24 : how to remove duplicate values from a table? : SELECT DISTINCT COLUMN_NAME FROM TABLE_NAME;
+25 : how to retrieve only 3 records             :   SELECT * FROM TABLE_NAME LIMIT 3;
+26 : how to retrieve records in ASC AND DESC order: SELECT * FROM TABLE_NAME ORDER BY COLUMN_NAME ASC;
+
+
+1 : what is used of CREATE STATEMENT?
+2 : what is used of INSERT STATEMENT?
+3 : What is used of UPDATE STATEMENT?
+4 : What is used of SELECT STATEMENT?
+5 : what is used of DELETE STATEMENT?
+6 : What is used of ALTER STATEMENT?
+7 : What is used of ADD STATEMENT?
+8 : What is used of DROP STATEMENT?
+9 : What is used of TRUNCATE STATEMENT?
+10: what is used of DISTINCT KEYWORD?
+
+11: what is used of WHERE CLAUSE?
+12: what is used of LIMIT CLAUSE? OFFSET AND LIMIT
+13: what is used of ORDER BY CLAUSE? ASC OR DESC
+14: what is used of GROUP BY CLAUSE?
+15: what is used of HAVING Clause?
+16: what is order of ORDER OF SQl EXECUTION?
+17: what is the aggregate function in the sql? and list it?
+18: what is used of LIKE OPERATOR?
+
+
+JOIN
+====
+
+1 : what is mean by JOIN in SQL?
+2 : Types of Join in SQL?
+    A : INNER JOIN OR JOIN : Fetching only matching record  from both tables.
+
+            SELECT t1.column_name, t2.column_name
+    		FROM TABLE_NAME1 t1
+    		INNER JOIN TABLE_NAME2 t2
+    		ON  e.dept_id = d.dept_id;
+
+    B : LEFT JOIN OR LEFT OUTER JOIN :  Fetching all record from left table and matching record from right table.
+                                       		(inner join + additional record from left table)
+
+             SELECT t1.column_name, t2.column_name
+             FROM TABLE_NAME1 t1
+             LEFT JOIN TABLE_NAME2 t2
+             ON  e.dept_id = d.dept_id;
+
+
+    C : RIGHT JOIN OR RIGHT OUTER JOIN : Fetching all record from right table and matching record from left table.
+    		(inner join + additional record from right table)
+
+    		SELECT t1.column_name, t2.column_name
+            FROM TABLE_NAME1 t1
+            RIGHT JOIN TABLE_NAME2 t2
+            ON  e.dept_id = d.dept_id;
+
+    D : FULL JOIN OR FULL OUTER JOIN  --->  Inner join + Left join + Right join
+
+    		SELECT t1.column_name, t2.column_name
+            FROM TABLE_NAME1 t1
+            FULL JOIN TABLE_NAME2 t2
+            ON  e.dept_id = d.dept_id;
+
+
+UNION
+=====
+
+1 : what is used of UNION?
+2 : what is used of UNION ALL?
+3 : what is used of INTERACTION?

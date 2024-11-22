@@ -1,0 +1,147 @@
+1 : how to find third highest salary of employee?
+-------------------------------------------------
+
+SELECT * FROM Employee
+ORDER BY Salary DESC
+OFFSET 2 -- Skip 2 rows
+LIMIT 1; -- Fetch 1 row
+
+    OR
+
+SELECT * FROM employeeInfo
+ORDER BY salary DESC
+LIMIT 2,1
+
+    OR
+
+SELECT salary FROM employeeInfo
+ORDER BY salary DESC
+LIMIT 2,1
+
+used of limit (offset , row_count )---------> first parameter show [ kis row kay bad data fetch karna hai ] and second parameter show [ ketne row fetched karna hai hai]
+
+2 : how to find second Lowest salary of employee?
+-------------------------------------------------
+
+SELECT * FROM Employee
+ORDER BY Salary ASC
+OFFSET 1 -- Skip the first row (lowest salary)
+LIMIT 1; -- Fetch only 1 row
+
+    OR
+
+SELECT * FROM Employee
+ORDER BY Salary ASC
+LIMIT 1,1;
+
+note :-->
+
+LIMIT 1,1 :---> second highest
+LIMIT 2,1 :---> third highest
+LIMIT 3,1 :---> fourth highest
+LIMIT 4,1 :---> fifth highest
+
+3 : find nth highest salary from the table without using TOP/LIMIT keywords.
+---------------------------------------------------------------------------
+
+SELECT * Employee emp1
+WHERE N - 1 = ( SELECT COUNT(DISTINCT Salary) FROM Employee emp2
+WHERE emp2.Salary > emp1.Salary  );
+
+where N = 1,2,3
+
+4 :write a sql query to find the duplicate row in the table?
+------------------------------------------------------------
+SELECT * ,
+COUNT(EmployeeID)
+FROM Employee
+GROUP BY EmployeeID
+HAVING COUNT(EmployeeID)>1;
+
+         OR
+
+SELECT FirstName, LastName, Salary, COUNT(*) AS DuplicateCount
+FROM Employee
+GROUP BY FirstName, LastName, Salary
+HAVING COUNT(*) > 1;
+
+         OR
+
+SELECT FirstName, COUNT(FirstName) AS DuplicateCount
+FROM Employee
+GROUP BY FirstName
+HAVING COUNT(FirstName) > 1;
+
+note : when we used * and count function together  then we should used "GROUP BY " otherwise we will get error.
+
+
+5 : write a query to calculate the even and odd records from table?
+-------------------------------------------------------------------
+FOR EVEN :
+
+SELECT * FROM Employee
+WHERE MOD(EmployeeID,2) = 0;
+
+FOR ODD :
+
+SELECT * FROM Employee
+WHERE MOD(EmployeeID,2) = 1;
+
+6 : write a query to display the first and last record from the Employee table?
+-------------------------------------------------------------------------------
+For first record:
+
+SELECT * FROM Employee
+WHERE EmployeeID = (SELECT MIN(EmployeeID) FROM Employee)
+
+
+For last record:
+
+SELECT * FROM Employee
+WHERE EmployeeID = (SELECT MAX(EmployeeID) FROM Employee)
+
+7 : write a query to retrieve the list of employees working in the same department.
+-----------------------------------------------------------------------------------
+
+SELECT DISTINCT e.EmployeeID , e.firstName, e.lastName
+FROM Employee e , Employee e1
+WHERE e.Department = e1.Department
+AND e.EmployeeID != e1.EmployeeID;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1 : how to delete duplicate data from table?
+--------------------------------------------
+--> using group by we can delete
+
+delete from table_name
+where primary_key not in ( select min(primary_key)
+                            from table_name
+                            group by column1, column2 etc);
+
+-->
+delete from table_name
+where primary_key in ( select max(primary_key)
+                        from table_name
+                        group by column1, column2 etc
+                        having count(1) > 1);
+
+2 : display a highest and lowest salary from employee corresponding to each department?
+--------------------------------------------------------------------------------------
+
+1 : how to find second highest salary of employee?

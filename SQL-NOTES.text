@@ -1,0 +1,1512 @@
+		SQL
+		
+1 : define a Database?
+======================
+--> database is the " collection of the data " .
+--> that data can be store in a formate that can be easily accessed (Digital).
+
+2 : DBMS ?
+=========
+--> DBMS : database management system
+--> DMBS is software application used to manage our (DB)Database.
+--> DMBS we can store a data in the table format , file , key value.
+
+exm : user --SQL--> DBMS (software application layer) --> DB (database)
+
+--> user can not direct access the DB , 
+--> user can used DBMS and DBMS interact with DB and perform an operation.
+
+3 : Types of databases?
+======================
+1 : Relational database :-->
+--> Data can stored in the table format.
+--> Relational database is also called as RDBMS.
+exm : MySql , Postgres , SQLServer ,Oracle
+
+2 : Non-relational database :-->
+--> Data can not store in the table format.
+--> Non-relational database is called as NO-SQL database.
+exm : mongodbDb
+
+4 : Different between DBMS AND RDBMS?
+=================================
+1 : DBMS : database management system
+--> DMBS is software application used to manage our (DB)Database.
+--> DMBS we can store a data in the table format , file , key value.
+exm : SQL , mongodbDb etc
+
+2 : RDBMS :  Relational database management system.
+--> RDBMS is used to store the data in the table format.
+exm : Postgres, SQL server , Oracle , MY SQL.
+
+5 : what is SQL?
+================
+--> SQL : structured query language
+--> SQl is programming language used to interaction with " relational database ".
+--> SQL is used to perform CRUD operations
+	1 : Create
+	2 : Read
+	3 : Update
+	4 : Delete
+
+6 : SEQUEL OR SQL?
+===================
+--> SEQUEL : Structured English Query Language
+--> SQL	   : Structured Query Language
+
+7 : SQL VS NO-SQL?
+=================
+SQL   : SQL is programming language used to interact with relational database.
+exm : postgres
+
+NO-SQl: NOSql is programming language used to interact with non-relational database.
+exm : document database , mongodbDb
+
+8 : Database structure Or SQl Structure?
+=======================================
+--> Database --> TestDb
+--> Tables	: 1 : employee
+			  2 : address
+--> Data ( Rows and Coulmns )
+
+or
+[ Database ---> Tables ---> Data (Rows and columns) ]--> RDBMS
+
+9 : define a SQL Tables?
+========================
+--> A table is the database object.
+--> A table can store the data in the form of a rows and columns.
+--> we can create a table Using CREATE TABLE TABLE_NAME( COLUMNS1 DATATYPE CONSTRAINT );
+
+10 : what is Fields in sql?
+=========================
+--> Fields are basically columns in a table.
+
+11 : what is Records in sql?
+===========================
+--> Records are basically rows in a table.
+--> Record give the complete information of single entry or entity.
+
+12 : list the different type of relationship in sql?
+====================================================
+1 : one-to-one
+2 : one-to-many
+3 : many-to-many
+4 : self Referencing relationship : This is used when a table need to define a relationship with itself.
+
+13 : what is the Data Types in SQL?
+==================================
+--> Data types is used to define which type of data the column can store in the table.
+--> Data types is define while creating table in the database.
+--> Data types divided into three categories
+	1 : String		  :-->  char, varchar, text ,etc
+	2 : Numeric		  :--> 	int, bigint, , etc
+	3 : Date and time :-->	date, datetime, etc
+
+2 : Character : 
+-------------
+1 : char(s) :-- full sapce is reserved
+--> char can store 0-255 characters  
+--> char(50) --> it will take 50 character
+--> when user store value "TANEER" it occupy only 7 character 
+--> char take full space of 50.
+--> char extra memory is west.
+
+2 : varchar(s) :-- provided given length of space is reserved not full space is reserved
+--> varchar can store 0-255 characters  
+--> varchar(50) --> it will take 50 character
+--> when user store value "TANEER" it occupy only 7 character 
+--> char occupy only  7 space of character from 50.
+--> extra memory is not west.
+
+3 : text(s) or BLOB(s) 			
+-->  text can stroe 0-65535 characters
+--> text can be prefered when we store large amount of data.
+
+
+1 : Numeric
+------------
+1 : INTEGER : 
+
+2 : TINYINT : 
+--> tinyint is the smaller then INTEGER
+--> the range is 127 to -128
+
+3 : smallint
+--> smallerInt is bigger then tinyint
+--> the range of smallint -32768<-->32768
+
+4 : bigint
+--> bigint is the bigger then INTEGER
+
+5 : Folat
+--> it is used to store samll decimal value.
+
+6 : Double
+--> it is used to store large decimal value.
+
+7 : BOOLEN
+--> it is used to store boolean value ( T or F ).
+
+
+Date-Time
+---------
+1 : date	
+--> date is used to store a date.
+--> YYYY-MM-DD
+
+2 : time
+--> time is used to store the time.
+--> HH-MM-SS
+
+3 : year
+--> year is used to store a year.
+--> YYYY
+
+
+14 : Define Primary and Foreign Keys?
+======================================
+
+1: Primary key(PK):
+-------------------
+
+--> using primary key we can uniquely identify each record in a table.
+--> A table can have only one primary key.
+--> primary key should be unique.
+--> primary key should not be "NOT NULL" values.
+--> primary key = unique + not null
+
+
+2: Foreign key(FK):
+-------------------
+
+--> foreign key is a column used to link two or more tables together.
+--> A table can have multiple number of foreign key.
+--> Foreign key can contain duplicate value.
+--> Foreign key should have "NULL" values.
+
+
+15 : define a Constraints in SQl?
+================================
+--> Constraints are used to specify the rules for filling the data in a table.
+--> we can declare a Constraints when we creating a table.
+	Syntax
+		CREATE TABLE table_name(
+			column1 datatype constraints,
+			column2 datatype constraints,
+			column3 datatype constraints,
+			.......
+			);
+
+
+16 : Commonly used constraints in SQL?
+=====================================
+1:NOT NULL		:-->  Ensures that column can not hava NULL value
+2:UNIQUE		:-->  Ensures that all values in a COLUMN are different.
+3:PRIMARY KEY	:-->  It is Combination of a NOT NULL and UNIQUE
+4:FOREIGN KEY	:-->  Used to link multiple tables together
+5:CHECK			:-->  Ensure that the values in a COLUMN satisfies a specific condition
+6:DEFAULT		:-->  Set a default value for a COLUMN if no value is present
+7:CREATE INDEX	:-->  By using this we can easily identify quickly(1,2,3,...)
+
+Example : 
+
+CREATE TABLE IF NOT EXISTS emp(
+	id INTEGER,
+	name varchar(250) NOT NULL,
+	use varchar(100) UNIQUE,
+	salary INTEGER DEFAULT 20000,
+	age INTEGER CHECK(age >= 18)
+	address_id INTEGER,
+	PRIMARY KEY(id),
+	FOREIGN KEY(student_id) REFERENCES address(id)
+	);
+
+17 : Different types of SQL Commands or SQl Application?
+=======================================================
+1 : DDL : Data Definition Language      
+--: it is used to define the database schema.
+--: CREATE , DROP, TRUNCATE , ALTER , RENAME
+
+2 : DQL : Data Control Language         
+--: SELECT
+
+3 : DML : Data Manipulation Language    
+--: it is deal with data present in the database.
+--: INSERT , UPDATE , DELETE 
+
+4 : DCL : Data Control Language
+--: grant and revoke permission to user.
+
+5 : TCL : Transaction Control Language  
+--: it is deal with transaction within the database.
+--: COMMIT , ROLLBACK
+
+18 : database related sql command?
+==================================
+1 : CREATE DATABASE IF NOT EXISTS db_name;
+2 : DROP DATABASE IF EXISTS db_name;
+3 : USE db_name;
+4 : SHOW DATABASES;
+
+*** note : IF NOT EXISTS and IF EXISTS is not support in postgres for db.
+  
+19 : how to CREATE and USE and DROP a show database?
+==============================================
+--> CREATE DATABASE statement is used to create a new database.
+--------
+	SYNTAX
+	------
+		CREATE DATABASE IF NOT EXISTS DATABASE_NAME;
+
+	EXAMPLE
+	------
+		CREATE DATABASE IF NOT EXISTS TANVEER;
+
+2:USE statement is used to use the database.
+-----
+	SYNTAX
+	------
+		USE DATABASE_NAME;
+
+	EXAMPLE
+	------
+		USE TANVEER;
+
+3:DROP DATABASE statement is used to drop an existing database.
+------
+	SYNTAX
+	------
+		DROP DATABASE IF EXISTS DATABASE_NAME;
+
+	EXAMPLE
+	-------
+		DROP DATABASE IF NOT EXISTS TANVEER;
+
+4:SHOW DATABASE statement is used to show all databases.
+------
+	SYNTAX
+	------
+		SHOW DATABASES;
+
+	EXAMPLE
+	-------
+		SHOW DATABASES;
+		
+note : USE and SHOW and IF EXISTS and IF NOT EXISTS command is not working in postgres with database.
+
+20 : what is used of IF EXISTS and IF NOT EXISTS in sql?
+=======================================================
+--> if you not used IF EXISTS and IF NOT EXISTS you will get "error" if table or database is not present.
+--> if you used IF EXISTS and IF NOT EXISTS you will get "warning" not an error if table or database is not present.
+--> IF EXISTS and IF NOT EXISTS come under the best practice when we drop or create a table or database.
+
+
+21 : table related queries?
+===========================
+1 : CREATE TABLE IF NOT EXIST table_name(
+			column_name1 datatype constraints,
+			column_name2 datatype constraints,
+			column_name3 datatype constraints,
+			.......
+			);
+
+2 : DROP TABLE IF EXISTS table_name;
+3 : SELECT * FROM table_name;
+4 : INSERT INTO table_name (column_name1,column_name2,column_name3,....column_nameN)
+	VALUES  (value1,value2,value3,.......valueN);
+5 : TRUNCATE TABLE table_name;
+6 : ALTER TABLE table_name
+	1 :	ALTER TABLE table_name
+		ADD column_name datatype;
+
+	2 :	ALTER TABLE table_name
+		DROP COLUMN column_name;
+
+	3 : ALTER TABLE table_name
+		RENAME COLUMN old_column_name TO new_column_name;
+
+	4 : ALTER TABLE table_name
+		ALTER COLUMN column_name TYPE new_datatype;
+		
+	5 : ALTER TABLE table_name
+		ALTER COLUMN column_name SET DEFAULT default_value;
+		
+	6 : ALTER TABLE table_name
+		ALTER COLUMN column_name DROP DEFAULT;
+		
+	7 : ALTER TABLE student
+		ADD CONSTRAINT unique_name UNIQUE (name);
+	
+	8 : ALTER TABLE table_name
+		DROP CONSTRAINT constraint_name;
+		
+	9 : ALTER TABLE old_table_name
+		RENAME TO new_table_name;
+		
+	10 : ALTER TABLE table_name
+		 ALTER COLUMN column_name SET NOT NULL;
+		
+	11 : ALTER TABLE table_name
+		 ALTER COLUMN column_name DROP NOT NULL;
+		 
+7 : UPDATE TABLE_NAME
+	SET COLUMN1 = VALUE1, COLUMN2 = VALUE2
+	WHERE ID = VALUE
+
+8 : DELETE FROM TABLE_NAME
+	WHERE CONDITION;
+	
+Note : 
+--> Create table support IF NOT EXISTS
+--> drop table support IF EXISTS 
+--> truncate table does not support IF EXIST
+
+22 : how to Create Table?
+========================
+--> CREATE TABLE statement is used to create a new table in a database.
+	Syntax
+	------
+		CREATE TABLE table_name(
+			column_name1 datatype constraints,
+			column_name2 datatype constraints,
+			column_name3 datatype constraints,
+			.......
+			);
+
+	Example
+	------
+		CREATE TABLE customer(
+			"id" int PRIMARY KEY,
+			"name" varchar(50) NOT NULL,
+			"age" int NOT NULL,
+			"city" char(50)
+			"salary" numeric
+			);
+
+
+23 : how to Insert data into table?
+====================================
+--> INSERT INTO statement is used to insert new record into table
+	Syntax
+	------
+		INSERT INTO table_name
+			(column1,column2,column3,....columnN)
+		VALUES  (value1,value2,value3,.......valueN);
+
+	example:
+	--------
+		INSERT INTO customer
+ 		("ID","Name","Age","City","Salary")
+		VALUES
+		(4,'Tanveer',22,'Karoshi',500000);
+
+-----------------------------------------
+		INSERT INTO customer
+				VALUES
+				(1,'Tanveer',22,'Karoshi',500000),
+				(2,'Anik',26,'Karoshi',500000),
+				(3,'Asif',24,'Karoshi',500000);
+
+
+
+24 : how to retrieve a data from a table?
+=========================================
+SELECT Statement
+================
+--> SELECT Statement is used to retrieve / select data from a database.
+--> BY using SELECT Statement we can retrieve all data or particular data from a data base
+
+	syntax
+	------
+		SELECT * FROM TABLE_NAME; ---> select all data
+
+	example
+	=======
+		SELECT * FROM Student;
+
+	syntax
+	------
+		SELECT COLUMN_NAME FROM TABLE_NAME; ---> select data based on the COLUMN
+
+	example
+	=======
+		SELECT std_name FROM Student;
+
+	syntax
+	------
+		SELECT DISTINCT COLUMN_NAME FROM TABLE_NAME; --> to select distinct / unique filed available in the table.
+
+	example
+	=======
+		SELECT DISTINCT std_grade FROM Student;
+
+
+25 : how to DROP a table?
+=========================
+
+DROP
+=====
+--> DROP TABLE statement is used to delete a table from a database permanently.
+	syntax
+	------
+		DROP TABLE TABLE_NAME;
+
+	Example
+	-------
+		DROP TABLE employee;
+
+26 :  how to Truncate Table?
+============================
+--> TRUNCATE TABLE statement is used to delete the data inside a table but not table itself
+	syntax
+	------
+		TRUNCATE TABLE TABLE_NAME;
+
+	Example
+	-------
+		TRUNCATE TABLE employee;
+
+
+27 : how to Alter table a sql?
+=============================
+-->ALTER TABLE statement is used to add, delete or modify columns in an existing table.
+
+A:--> ADD COLUMN
+=================
+	Syntax
+	------
+		ALTER TABLE TABLE_NAME
+		ADD COLUMN COLUMN_NAME;
+
+
+B:--> DROP COLUMN
+===============
+	Syntax
+	------
+		ALTER TABLE TABLE_NAME
+		DROP COLUMN COLUMN_NAME;
+
+
+C:--> MODIFY COLUMN / ALTER COLUMN
+=====================================
+	Syntax
+	------
+		ALTER TABLE TABLE_NAME
+		ALTER COLUMN COLUMN_NAME;
+
+D :--> RENAME a TABLE to a new table name
+==========================================
+        ALTER TABLE TABLE_NAME
+        RENAME TO new_table_name;
+
+exm :
+
+-- 1. Add a column
+ALTER TABLE student
+ADD address VARCHAR(255);
+
+-- 2. Drop a column
+ALTER TABLE student
+DROP COLUMN address;
+
+-- 3. Rename a column
+ALTER TABLE student
+RENAME COLUMN name TO full_name;
+
+-- 4. Change the data type of a column
+ALTER TABLE student
+ALTER COLUMN age TYPE BIGINT;
+
+-- 5. Set a default value for a column
+ALTER TABLE student
+ALTER COLUMN age SET DEFAULT 18;
+
+-- 6. Remove the default value for a column
+ALTER TABLE student
+ALTER COLUMN age DROP DEFAULT;
+
+-- 7. Add a UNIQUE constraint
+ALTER TABLE student
+ADD CONSTRAINT unique_full_name UNIQUE (full_name);
+
+-- 8. Drop a constraint
+ALTER TABLE student
+DROP CONSTRAINT unique_full_name;
+
+-- 9. Add a FOREIGN KEY constraint
+ALTER TABLE emp
+ADD CONSTRAINT fk_student FOREIGN KEY (student_id) REFERENCES student(id);
+
+-- 10. Drop a FOREIGN KEY constraint
+ALTER TABLE emp
+DROP CONSTRAINT fk_student;
+
+-- 11. Rename the table
+ALTER TABLE student
+RENAME TO students;
+
+-- 12. Enable a trigger
+ALTER TABLE students
+ENABLE TRIGGER trigger_name;
+
+-- 13. Disable a trigger
+ALTER TABLE students
+DISABLE TRIGGER trigger_name;
+
+-- 14. Set a column as NOT NULL
+ALTER TABLE students
+ALTER COLUMN age SET NOT NULL;
+
+-- 15. Drop a NOT NULL constraint
+ALTER TABLE students
+ALTER COLUMN age DROP NOT NULL;
+
+28 : how to Update data into table?
+===================================
+--> UPDATE Statement is used to update existing rows in a table.
+
+	Syntax
+	------
+		UPDATE TABLE_NAME
+		SET COLUMN1 = VALUE1, COLUMN2 = VALUE2
+		WHERE ID = VALUE
+
+	Syntax
+	------
+		UPDATE TABLE_NAME
+		SET COLUMN1 = VALUE1, COLUMN2 = VALUE2
+		WHERE CONDITION;
+
+	example
+	-------
+		UPDATE Customer
+		SET "Age" = 25, "Salary" = 100000
+		WHERE "ID" = 3;
+
+
+29 : how to Delete Values in Table?
+==================================
+--> DELETE Statement is used to delete existing records in a table
+
+	Syntax
+	------
+		DELETE FROM TABLE_NAME
+		WHERE CONDITION;
+
+	Example
+	-------
+		DELETE FROM CUSTOMER
+		WHERE "ID" = 4;
+
+
+SELECT Statement
+================
+--> SELECT Statement is used to retrieve / select data from a database.
+--> BY using SELECT Statement we can retrieve all data or particular data from a data base
+
+	syntax
+	------
+		SELECT * FROM TABLE_NAME; ---> select all data
+
+	example
+	=======
+		SELECT * FROM Student;
+
+	syntax
+	------
+		SELECT COLUMN_NAME FROM TABLE_NAME; ---> select data based on the COLUMN
+
+	example
+	=======
+		SELECT std_name FROM Student;
+
+	syntax
+	------
+		SELECT DISTINCT COLUMN_NAME FROM TABLE_NAME; --> to select distinct / unique filed available in the table.
+
+	example
+	=======
+		SELECT DISTINCT std_grade FROM Student;
+
+
+39 : ***how can you select unique record from a table?
+======================================================
+---> using DISTINCT keyword.
+
+DISTINCT
+=========
+--> DISTINCT is always used with SELECT statement.
+--> DISTINCT is used select only unique value or (not repeated values) (exm: gender --> M , F)
+--> DISTINCT is remove the duplicate values
+
+	syntax
+	------
+		SELECT DISTINCT COLUMN_NAME FROM <Table_name>;
+
+	Example
+	------
+		SELECT DISTINCT e_gender FROM employee;
+
+40 : how to retrieve records in ASC AND DESC order?
+===================================================
+--> SELECT * FROM TABLE_NAME ORDER BY COLUMN_NAME ASC;
+
+exm : 
+		SELECT * FROM student ORDER BY id;
+
+41 : ***Difference between DELETE , DROP AND TRUNCATE?
+======================================================
+DELETE
+--> delete command is used to delete a row from a table.[ one by one or at a time all]
+--> delete command is DML
+--> can be roll back.
+--> where condition can be used.
+--> delete command is slow
+
+DROP
+--> drop command is used to delete a table permanently from a db.
+--> DROP command is DDL.
+--> can not be roll back.
+--> where condition can not be used.
+--> Drop command is Fast
+
+TRUNCATE
+--> truncate command is used delete all the row at a time from a table.
+--> truncate command is DDL.
+--> can not be roll back.
+--> where condition can not be used.
+--> Truncate command is Fast
+
+42 : types of operations in SQL?
+-------------------------------
+--> they re four types of operations in sql.
+1 : Arithmetic Operators : + , - , * , / ,%
+2 : comparison Operators : = , != , > , < , <= , >=
+3 : logical Operators	 : AND , OR , NOT , IN , BETWEEN , ALL , LIKE , ANY
+4 : bitwise Operators    : & , |
+
+43: explain me about logical operations?
+---------------------------------------
+1 : AND 		: it will check both condition is true it will return true.
+	SELECT * FROM student WHERE marks < 70 AND city= 'chikodi';
+
+2 : OR  		: it will check one condition out of mutiple condition is true it will return true.
+	SELECT * FROM student WHERE marks < 70 OR city= 'chikodi';
+
+3 : BWTWEEN		: if u want to get the value in the particular range. it also pass the included value 70 and 90.
+	SELECT * FROM student WHERE marks BETWEEN 70 AND 90;
+	
+4 : IN 			: matches any value in the list : In operator we pass list of value and any value match it return result
+	SELECT * FROM student where city IN('chikodi' , 'pune');
+
+5 : NOT 		: it negate the given condition
+	SELECT * FROM student where city NOT IN('chikodi' , 'pune');
+
+
+42 : what are some common clauses used with select queries in SQL?
+==================================================================
+1 : WHERE
+2 : ORDER BY
+3 : GROUP BY
+4 : HAVING
+
+43 : explain a WHERE clause?
+============================
+--> WHERE clause is used to filter records.
+--> It is used to extract only those records that full fill a specific condition.
+	Syntax
+	------
+		SELECT * FROM TABLE_NAME
+		WHERE CONDITION;
+
+	Example
+	-------
+		SELECT * FROM Student
+		WHERE std_grade = 'A';
+		
+--> in where clause we used different type of operators
+1 : Arithmetic Operators : + , - , * , / ,%
+2 : comparison Operators : = , != , > , < , <= , >=
+3 : logical Operators	 : AND , OR , NOT , IN , BETWEEN , ALL , LIKE , ANY
+4 : bitwise Operators    : & , |
+
+44 : explain about ORDER BY clause?
+===================================
+--> The ORDER BY is used to sort the result set in ascending (ASC) or descending (DESC) order.
+	syntax
+	------
+		SELECT * FROM TABLE_NAME
+		ORDER BY COLUMN_NAME ASC;
+
+
+	Example --> ascending
+	-------
+		SELECT * FROM Student
+		ORDER BY std_name;
+
+	Example --> de-sending
+	-------
+		SELECT * FROM Student
+		ORDER BY std_name DESC;
+
+45 : explain about LIMIT clause?
+================================
+--> limit is used to retrieve how many row u want to retrieve.
+	syntax
+	------
+		SELECT * FROM TABLE_NAME
+		LIMIT 3;
+
+	Example
+	-------
+		SELECT * FROM Student
+		LIMIT 3;
+
+46 : explain about GROUP BY clause?
+===================================
+--> The GROUP By statement group rows that have the same value into summary rows.
+--> GROUP BY statement mostly used with aggregate function.
+
+note--> GROUP By is used when COLUMN have same value in multiple times.
+	syntax
+	------
+		SELECT COLUMN_NAME
+		FROM TABLE_NAME
+		GROUP_BY COLUMN_NAME
+
+	Example
+	-------
+		SELECT mode, SUM(amount) as TOTAL
+		FROM payments
+		GROUP BY amount
+		ORDER BY TOTAL
+
+
+47 : explain about HAVING Clause?
+=================================
+--> HAVING Clause is used when we apply the condition with GROUP BY.
+--> HAVING Clause is used to apply filter on the result of GROUP BY based on the specific conditions.
+--> WHERE clause places conditions on the selected columns,
+--> whereas The HAVING clause places condition on groups created by the GROUP BY clause.
+--> having is always used below the GROUP BY.
+
+	Syntax
+	------
+		SELECT COLUMN_NAME
+		FROM TABLE_NAME
+		WHERE CONDITION
+		GROUP BY COLUMN_NAME
+		HAVING CONDITIONS
+
+	Example
+	-------
+		SELECT mode, COUNT(amount) as TOTAL
+		FROM payments
+		GROUP BY mode
+		HAVING COUNT(amount) >= 2 AND COUNT(amount) < 3
+		ORDER BY TOTAL
+
+
+48 : what are difference between 'HAVING' and 'WHERE' Clause?
+===============================================================
+--> HAVING clause is only used with the GROUP BY clause.
+--> GROUP BY clause is only used with the Aggregate function.
+--> WHERE and GROUP BY are present at the same time then first WHERE clause is executed then GROUP BY clause is executed .
+
+
+49 :different between ORDER BY and GROUP BY clause?
+===================================================
+GROUP BY :
+--> Group by clause is used for grouping purpose.
+--> GROUP BY clause is applicable when we want to use aggregate functions to more than one set of rows.
+
+ORDER BY :
+--> ORDER BY clause is applicable when we want to get the data in the sorting order.
+
+
+50 : what is mean AGGREGATE FUNCTION?
+======================================
+--> Aggregate function perform operations on a collection of values to return a singe value.
+--> Aggregate function mostly used with GROUP By and SELECT statement.
+
+1:COUNT() --> return total numbers of rows
+2:SUM() --> return sum of all values
+3:AVG() --> return average value
+4:MAX() --> return maximum value in the column
+5:MIN() --> return minimum value in the column
+6:ROUND() --> Rounds a number to a specific number of decimal places.
+
+Example
+=======
+	SELECT COUNT(*) FROM PAYMENT;
+
+	SELECT COUNT(payment) FROM PAYMENT;
+
+	SELECT SUM(payment) FROM PAYMENT;
+
+	SELECT MAX(payment) FROM PAYMENT;
+
+	SELECT MIN(payment) FROM PAYMENT;
+
+    SELECT AVG(payment) FROM PAYMENT;
+
+    SELECT ROUND(AVG(payment),2) FROM PAYMENT;
+
+    Syntax
+    ======
+    	SELECT AGGREGATE_FUNCTION(COLUMN_NAME) FROM TABLE_NAME;
+
+
+51 : what are different between aggregate and scalar function?
+===============================================================
+
+Aggregate function : performs operations on a collection of values to return a singe value.
+exm : AVG() , MAX() , MIN() , COUNT() etc
+
+scalar function : return a single value based on the input value.
+exm : UPPER() , LENGTH() etc.
+
+
+52 :  what is ORDER OF SQl EXECUTION?
+=====================================
+1:FROM / JOIN          :  choose and join tables to get base data.
+2:WHERE                :  Filter the base data
+3:GROUP BY             :  Aggregate the base data
+4:HAVING               :  Filter the aggregate data.
+5:SELECT               :  Return the final data
+6:ORDER BY             :  Sort the final data
+7:LIMIT / OFFSET       :  limits number of data to be returned.
+
+
+53 : what is an Alias in SQL? [ give the neck name ]
+====================================================
+--> Alias in temporary name assigned to the table or column for the purpose of particular SQL query.
+Exm :
+SELECT emp.name AS empName dep.name AS depName
+FROM Employee emp , Department dep
+WHERE emp.empID = dep.empID;
+
+
+54 : what is used of LIKE operator in SQL?
+==========================================
+--> LIKE is work on pattern
+--> LIKE operator is used to extract records where a particular pattern is present.
+--> LIKE operator have 2 wild card character
+
+	1: Percentage symbol --> " % "
+		represent zero , one or more characters.
+
+	2: Underscore symbol --> " _ "
+		represent a single character.
+
+        Syntax
+	------
+		SELECT column1,column2,column3,....columnN
+		FROM TABLE_NAME
+		WHERE COLUMN_NAME LIKE '###'.
+
+NOTE --> Pattern should be in single quotes ''.
+----
+
+	Example
+	-------
+		select * from employee
+		where e_name LIKE 'A%';
+
+
+55 : how Pattern matching in sql?
+==================================
+
+--> in sql pattern matching is done by using LIKE command.
+exm :
+1 : WHERE Name LIKE 'a%';   ---> name is start from a
+2 : WHERE Name LIKE '%a';   ---> name is end from a
+3 : WHERE Name LIKE '%a%';  ---> a is present in any where in the name.
+4 : WHERE Name LIKE '_a%';  ---> first later is any thing but second later is a .
+5 : WHERE Name LIKE 'a_%';  ---> first later is a and second latter is anything minimum 2 latter.
+6 : WHERE Name LIKE 'a%y';  ---> first later is a and last latter is y
+
+
+56 : varchar vs varchar2?
+========================
+--> varchar is ANSI standard and varchar2 is oracle standard.
+--> size of both are same.
+
+57 : Are null value same as that of zero or blank space?
+========================================================
+--> A null value is not all same as that zero or blank space.
+--> A null value represents a value which is unavailable or garbage value.
+
+58 : Different between UNION and UNION ALL?
+======================================
+UNION : UNION give unique records.
+UNION ALL : UNION give all records and also duplicate records.
+
+59 : what do you mean by trigger in sql?
+========================================
+--> A trigger is a special type of store procedure that automatically run when an event occurs in the database server.
+--> It allows you to execute batch of code when an insert , update  or any other query is executed against a specific table.
+
+60 : what is store procedure?
+============================
+--> A store procedure is a set of SQL statements with an assigned name.
+--> which are stored in a relational database management system as group.
+--> so it can be reused and shared by multiple programs.
+
+61 : what are advantages of store procedure?
+============================================
+1 : we can reused the store procedure.
+2 : faster execution
+
+62 : what is view? [ virtual table ]
+====================================
+--> A view is virtual table based on the result-set of an SQL statement.
+--> A view contains rows and columns just like a real table.
+--> the data present in view from one or more tables in the database.
+
+63 : what are view used for?
+============================
+1 : Restricting access to data.
+2 : Making complex query as simple.
+3 : Ensure data independent.
+
+64 : Nested query vs Correlated query?
+======================================
+1 : Nested query :
+
+--> Inner query runs first and only once's and give the result.
+--> Outer query is executed with result from inner query. [ outer query each row compare with inner query result ]
+--> it is work on " Bottom up approach ".
+
+exm :
+SELECT * FROM Employee where Salary = (Select MAX(Salary) from Employee );
+
+2 : Correlated query :
+
+--> outer query is executed first for every outer query row Inner query is executed.
+--> it is work on " Top down approach".
+
+
+65 : explain ACID properties
+============================
+1 : Atomicity   : Either all the changes are performed , or none of the changes are them .[ if all transactions are completed or no one can complete]
+2 : Consistency : data is in consistent state when transactions start and when it ends.
+3 : Isolation   : Transaction that run concurrently appear to be serialized.
+4 : Durability  : after a transaction successfully complete changes to data persist [ save ] and are not undone ,even in the event of system failure.  [ ek bar database mai save hugya to permonnet huna chahei ]
+
+66 : what is Normalization?
+============================
+--> way to organize structured data in the database efficiently.
+
+67 :what are the different Normal Forms?
+========================================
+1 : 1NF
+2 : 2NF
+3 : 3NF
+4 : BCNF (Boyce Codd NF)
+
+
+                            JOINS
+==================================================================================================================
+SQL JOINS
+=========
+--> JOIN means to combine something.
+--> A JOIN clause is used to combine data from two or more table based on related column (same column) between them.
+
+Example
+========
+employee
+department
+manager
+projects
+
+note --> column name does not matter in join
+     --> values is matter in join values must be same
+
+Types
+====
+1: inner join / JOIN
+--------------------
+--> only the record which are present in both table will be fetch.
+
+	syntax
+	-------
+		SELECT column_name, ..
+		FROM TABLE_NAME1 t1
+		INNER JOIN TABLE_NAME2 t2
+		ON CONDITION;
+
+-- Fetch the employee name and department name the  belongs to EMPLOYEE and DEPARTMENT TABLE
+-- INNER JOIN  / JOIN
+
+
+	example
+	-------
+		select e.emp_name, d.dept_name
+		from EMPLOYEE e
+		inner join DEPARTMENT d
+		on e.dept_id = d.dept_id;
+
+
+
+left join / left outer join
+===========================
+--> left join do 2 things
+--> left join  ===> inner join + any addition record in the left table
+--> if join condition is fail to matching a record from left table to right table it will return "null".
+
+-- Fetch all the employee name and department name the  belongs to
+-- LEFT JOIN
+-- left join  ===> inner join + any addition record in the left table
+
+
+	example
+	-------
+		select e.emp_name, d.dept_name
+		from EMPLOYEE e
+		left join DEPARTMENT d
+		on e.dept_id = d.dept_id;
+
+right join / right outer join
+============================
+--> right join do 2 things
+--> right join  ===> inner join + any addition record from the right table
+--> if join condition is fail to matching a record from left table to right table it will return "null".
+
+-- Fetch all the employee name and department name the  belongs tovy
+-- RIGHT JOIN
+-- right join  ===> inner join + any addition record in the right table
+
+
+	example
+	-------
+		select e.emp_name, d.dept_name
+		from EMPLOYEE e
+		right join DEPARTMENT d
+		on e.dept_id = d.dept_id;
+
+Full outer join / full join
+===========================
+--  full outer join
+
+-- Full join  = Inner join
+-- 				+ all remaining records left table (return null value for any columns fetch)
+-- 				+ all remaining records right table table (return null value for any columns fetch)
+
+-- Full join  = Inner join + Left join + Right join
+
+	example
+	--------
+		select e.emp_name,d.dept_name
+		from employee e
+		full join department d on d.dept_id = e.dept_id;
+
+
+CROSS JOIN
+==========
+--> CROSS JOIN return cartesian product
+--> cross join does not need a join condition (does not used "on" clause)
+--> A table can not be join with any of with other table but still u want to get information from that table that time go for the cross join.
+
+
+
+-- CROSS JOIN
+-- return cartesian product
+--> cross join does not need a join condition (does not used "on" clause)
+--> it join every single record from left table to every single record from right table (8*6 = 48)
+
+	example
+	--------
+		select e.emp_name, d.dept_name
+		from employee e ---> emp table having 8 record
+		cross join department d;  --> department table having 6 record
+		--> result = 8 * 6 = 48
+
+-- example when we used cross join
+--> write a query to fetch the employee name and their corresponding department name.
+--> also make sure to display the company name and the company location corresponding to each employee
+
+		select e.emp_name, d.dept_name,c.company_name,c.company_location
+		from employee e
+		inner join department d on d.dept_id = e.dept_id
+		cross join company c;
+
+NATURAL JOIN
+============
+-- Nature join --> never used natural join because you giving the control to sql to join the table based on join condition
+-->In Nature join sql will decide what is a join condition not by the user them self
+-->In Nature join we can not used condition or (on clause ) sql will define the condition
+--> if columns are present in the both table with same name that time it perform inner join.
+--> In Nature join is look ilke inner join but in inner join user will define join condition and in In Nature join sql will define join condition
+--> if columns are present in the both table with different name name that time it perform cross join.
+
+	example
+	--------
+		select e.emp_name,d.dept_name
+		from employee e
+		natural join department d;
+
+
+INNER JOIN --> Fetching only matching record  from both tables.
+
+LEFT JOIN --> Fetching all record from left table and matching record from right table.
+		(inner join + additional record from left table)
+
+RIGHT JOIN --> Fetching all record from right table and matching record from left table.
+		(inner join + additional record from right table)
+
+FULL JOIN  --->  Inner join + Left join + Right join
+
+CROSS JOIN --> it join every single record from left table to every single record from right table (8*6 = 48)
+
+
+=========================================================== UNION ===================================
+set operator
+============
+1:UNION
+2:UNION ALL
+
+1:join the multiple table
+2:we can retrieve data from multiple table.
+
+way to retrieve data from multiple table.
+========================================
+1:JOIN
+2:UNION AND UNION ALL
+3:SUB QUERY
+
+UNION
+------
+1:it will extract data from both table and eliminate duplicate data.
+
+Table 1		Table 2		Union
+=======		=======		=====
+id			id			id
+
+1			2			1
+2			3			2
+3			4			3
+						4
+
+
+UNION ALL
+---------
+1:it will extract data from both table and also extract duplicate data.
+
+Table 1		Table 2		Union ALL
+=======		=======		=========
+id			id			id
+
+1			2			1
+2			3			2
+3			4			2
+						3
+						3
+						4
+
+INTERSECTION
+---------
+1:it will extract common data from both tables.
+
+Table 1		Table 2		INTERSECTION
+=======		=======		=========
+id			id			id
+
+1			2
+2			3	 		2
+3			4
+						3
+types of join in SQl
+--------------------
+1 : CROSS JOIN : A cross join return all possible combination of rows of two tables ( Also called as cartesian product ).
+2 : INNER JOIN :
+3 : LEFT JOIN :
+4 : RIGHT JOIN :
+5 : FULL JOIN :
+
+
+
+find the 2nd highest salary or nth highest salary?
+--------------------------------------------------
+Select * from Employee
+Order by Salary desc
+Offset 2
+limit 1;
+
+        OR
+
+Select name, salary Max(salary) as maxSal from Employee
+where salary <> (Select Max(salary) From Employee);
+
+what are the different operators in sql?
+----------------------------------------
+1 : Arithmetic
+2 : Logical
+3 : Relational
+
+
+Operators in SQL
+================
+--> The character and words are reserved in t he SQL are called as operators.
+--> Operators are mostly used with where clause.
+
+Most used Operators
+===================
+1:Arithmetic operators
+2:Comparison operators
+3:Logical operators
+4:Bitwise operators
+
+1:Arithmetic operators
+======================
+--> It is used to perform arithmetic operation on numeric values.
+--> [ + , - , * , /, % ]
+
+2:Comparison operators
+======================
+--> It is used to compare two different data of sql table
+--> [ =, !=, > , < , >= , <=]
+
+3:Logical operators
+===================
+--> It is used to perform the boolean operations
+--> [ALL, IN , BETWEEN , LIKE , AND , OR , NOT , ANY]
+
+4:Bitwise operators
+===================
+--> It is used to perform bit operation on the Integer value.
+--> [ bitwise AND(&) , bitwise OR(|) ]
+
+
+Operators in SQL
+================
+--> The character and words are reserved in the SQL are called as operators.
+--> Operators are mostly used with where cause.
+
+
+1:AND
+-----
+--> AND operator display records if all the conditions separated by AND are true.
+--> It display a record if all condition satisfied.
+
+	Syntax
+	------
+		SELECT column1,column2,column3,....columnN
+		FROM TABLE_NAME
+		WHERE [CONDITION] AND [CONDITION] AND [CONDITION];
+
+	Example
+	-------
+		select * from employee
+		where e_salary > 25000 AND e_gender = 'F';
+
+2:OR
+----
+--> OR operator display records all the conditions separated by OR are true.
+--> It display a record if any condition satisfied.
+
+	Syntax
+	------
+		SELECT column1,column2,column3,....columnN
+		FROM TABLE_NAME
+		WHERE [CONDITION] OR [CONDITION] OR [CONDITION];
+
+	Example
+	-------
+		select * from employee
+		where e_salary > 25000 OR e_gender = 'F';
+
+3:NOT
+-----
+-->  It display a record if any condition is NOT true..
+	Syntax
+	------
+		SELECT column1,column2,column3,....columnN
+		FROM TABLE_NAME
+		WHERE [CONDITION] NOT [CONDITION] OR [CONDITION];
+
+	Example
+	-------
+		select * from employee
+		where NOT e_gender= 'F';
+
+4:LIKE --> It is work on pattern
+------
+--> LIKE operator is used to extract records where a particular pattern is present.
+--> LIKE operator have 2 wild card character
+
+	1: Percentage symbol --> " % "
+		represent zero , one or more characters.
+
+	2: Underscore symbol --> " _ "
+		represent a single character.
+
+        Syntax
+	------
+		SELECT column1,column2,column3,....columnN
+		FROM TABLE_NAME
+		WHERE COLUMN_NAME LIKE '###'.
+
+NOTE --> Pattern should be in single quotes ''.
+----
+
+	Example
+	-------
+		select * from employee
+		where e_name LIKE 'A%';
+
+
+5:BETWEEN
+---------
+--> BETWEEN operator is used to select values within a given range.
+        Syntax
+	------
+		SELECT column1,column2,column3,....columnN
+		FROM TABLE_NAME
+		WHERE COLUMN_NAME BETWEEN VAL1 AND VAL2;
+
+	Example
+	------
+		select * from employee
+		where e_salary BETWEEN 25000 AND 100000;
+
+
+
+
+
+Functions
+================
+--> Function is used to perform a specific task.
+--> Function accept input parameter perform an action and then return result.
+--> They are two types of functions.
+	1:System define function
+	2:user define function
+
+STRING FUNCTION
+===============
+--> function that perform any task on string is called String function.
+--> String function are used to perform an operation on input string and return an output string.
+
+1:UPPER() --> Convert the value of filed to uppercase.
+2:LOWER() --> Convert the value of filed to lowercase.
+3:LENGTH()--> return the length of text filed.
+4:SUBSTRING() --> extracts a substring from a string.
+5:Now() --> return current system date and time
+6:FORMAT() --> used to set the format of a filed.
+7:CONCAT() --> add two or more string together.
+8:REPLACE() --> Replace a existing string with new subString
+9:TRIM() -->  It is used to remove the space between words or characters
+
+Syntax
+=====
+	SELECT STRING_FUNCTION(COLUMN_NAME) FROM TABLE_NAME;
+
+
+example
+=======
+	SELECT UPPER(std_name) FROM Student;
+
+	SELECT LOWER(std_name) FROM Student;
+
+	SELECT LENGTH(std_name), std_name FROM Student;
+
+	SELECT SUBSTRING(std_name, 1, 3), std_name FROM Student;
+
+	SELECT CONCAT(std_name,std_grade),std_name, std_grade FROM Student;
+
+	SELECT REPLACE(std_name,'Tanveer','TanveerPatel') FROM Student;
+
+
+===========================
+=============================
+
+
+
+
+
+8 : what are the different database management system other than RDBMS?
+=======================================================================
+1 : NOSQL database : mongodbDb
+2 : Graph database : Amazon Neptune
+3 : Cloud database : AWS , Azure , Oracle cloud.
+
+
+
+13 : what are various level constraints?
+========================================
+--> they are two types
+1 : column level constraints
+2 : table level constraints
+
+
+
+16 : Different types of SQL Commands or SQl Application?
+=======================================================
+1 : DDL : Data Definition Language      : it is used to define the database schema     [ CREATE , DROP, TRUNCATE , ALTER , RENAME]
+2 : DML : Data Manipulation Language    : it is deal with data present in the database [ INSERT , UPDATE , DELETE , SELECT ]
+3 : DQL : Data Control Language         : it is deal with right and permission [ GRANT , REVOKE ]
+4 : TCL : Transaction Control Language  : it is deal with transaction within the database [COMMIT , ROLLBACK]
+
+17:DDl:--> data definition language
+===================================
+--> DDL means you can independently create database, define its structure use it and then discard it when yor are done with it.
+
+--> create
+--> alter
+--> drop
+
+18:DML:--> data manipulation language
+=====================================
+--> DML means you can used already existing database for maintaining a database.
+
+--> select
+--> insert
+--> update
+--> delete
+
+19:DCL:--> data control language
+================================
+--> DCl specifies how you can protect your database against corruption and misuse.
+--> DCL is used to avoid the data missed used.
+--> DCL is used to avoid the data corruption.
+
+--> grant
+--> revoke
+
+20 :TCL : Transaction control language :
+========================================
+--> it is deal with transaction within the database
+
+--> ROLLBACK
+--> COMMIT
+
+
+22 : how to Create Table?
+========================
+--> CREATE TABLE statement is used to create a new table in a database.
+	Syntax
+	------
+		CREATE TABLE table_name(
+			column1 datatype constraints,
+			column2 datatype constraints,
+			column3 datatype constraints,
+			.......
+			);
+
+	Example
+	------
+		CREATE TABLE customer(
+			"ID" int PRIMARY KEY,
+			"Name" varchar(50) NOT NULL,
+			"Age" int NOT NULL,
+			"City" char(50)
+			"Salary" numeric
+			);
+
+-------------------------
+	        create table employee(
+			emp_id integer PRIMARY KEy,
+			emp_name varchar(50) not NULL
+			);
+
